@@ -1,12 +1,10 @@
 # [gitolite](http://gitolite.com/gitolite/install.html)
 
-FROM centos:latest
+FROM centos:7
 
 MAINTAINER King-On Yeung <koyeung@gmail.com>
 
-
 RUN yum install -y deltarpm yum-utils && \
-    yum update -y && \
     yum install -y git perl-Data-Dumper openssh-server && \
     yum clean all
 
@@ -17,8 +15,7 @@ WORKDIR /home/git
 RUN mkdir -p /home/git/bin && \
     git clone git://github.com/sitaramc/gitolite  && \
     gitolite/install -ln /home/git/bin && \
-    mkdir -p /home/git/repositories && \
-    chown git:git /home/git/repositories
+    mkdir -p /home/git/repositories
 
 USER root
 EXPOSE 22
