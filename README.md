@@ -1,13 +1,21 @@
 docker-gitolite
 ==
-Host gitolite in a docker container.
+Host [gitolite](http://gitolite.com) in a docker container.
 
-Building
+Setup docker image
 ==
+
+Method 1: Building
+--
 
 Copy the sources to your docker host and build the container:
 
     # docker build --rm -t <username>/gitolite .
+
+Method 2: Pull from Docker Hub
+--
+
+    # docker pull docker.io/koyeung/gitolite
 
 Running
 ==
